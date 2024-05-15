@@ -17,10 +17,10 @@ const widthD = Dimensions.get("screen").width;
 const heightD = Dimensions.get("screen").height;
 
 const ThemeSwitch: React.FC<{}> = () => {
-  const width1st = new Animated.Value(0);
-  const height1st = new Animated.Value(0);
-  const offsetX1st = new Animated.Value(12);
-  const offsetY1st = new Animated.Value(38);
+  const width = new Animated.Value(0);
+  const height = new Animated.Value(0);
+  const offsetX = new Animated.Value(12);
+  const offsetY = new Animated.Value(38);
 
   const wallps = useWallp();
   const [currentWallp, setCurrentWalp] = React.useState(undefined);
@@ -30,22 +30,22 @@ const ThemeSwitch: React.FC<{}> = () => {
 
   const animate = () => {
     Animated.parallel([
-      Animated.timing(width1st, {
+      Animated.timing(width, {
         toValue: 1500,
         duration: 1750,
         useNativeDriver: false,
       }),
-      Animated.timing(height1st, {
+      Animated.timing(height, {
         toValue: 1500,
         duration: 1600,
         useNativeDriver: false,
       }),
-      Animated.timing(offsetX1st, {
+      Animated.timing(offsetX, {
         toValue: -400,
         duration: 200,
         useNativeDriver: false,
       }),
-      Animated.timing(offsetY1st, {
+      Animated.timing(offsetY, {
         toValue: -400,
         duration: 200,
         useNativeDriver: false,
@@ -74,8 +74,8 @@ const ThemeSwitch: React.FC<{}> = () => {
   }, [wallpIndex]);
 
   useEffect(() => {
-    width1st.setValue(0);
-    height1st.setValue(0);
+    width.setValue(0);
+    height.setValue(0);
     console.log('next = ' + wallpIndex)
     setNextWalp(wallps.Next(wallpIndex));
   }, [currentWallp]);
@@ -91,10 +91,10 @@ const ThemeSwitch: React.FC<{}> = () => {
         ></Image>
       <Animated.View
         style={getWallpaperStyle({
-          width: width1st,
-          height: height1st,
-          offsetX: offsetX1st,
-          offsetY: offsetY1st,
+          width: width,
+          height: height,
+          offsetX: offsetX,
+          offsetY: offsetY,
           index: 2,
         })}
       >

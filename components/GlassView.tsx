@@ -1,5 +1,5 @@
 import React from "react";
-import ts from '../images/wallp3.jpg'
+import ts from '../images/gradientWallp3.jpeg'
 
 import {
   Dimensions,
@@ -9,7 +9,6 @@ import {
   View,
 } from "react-native";
 import { getGlassView, getGlassImage } from "../styles/GlassView";
-import { BlurView } from "expo-blur";
 
 const { width, height } = Dimensions.get("screen");
 
@@ -21,12 +20,12 @@ const GlassView: React.FC<{}> = () => {
           position: "absolute",
           top: 0,
           left: 0,
-          width: width - 50,
-          height: height - 200,
+          width: width - 20,
+          height: height - 180,
           borderRadius: 9,
           overflow: "hidden",
           backgroundColor: 'transparent',
-          opacity: 0.9
+          opacity: .72
         }}
       ></Image>
     </View>
