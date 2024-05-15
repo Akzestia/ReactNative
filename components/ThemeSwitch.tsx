@@ -12,6 +12,7 @@ import {
 import { getImageStyle, getWallpaperStyle } from "../styles/Wallpaper";
 import useWallp from "../hooks/useWallp";
 import miku from '../images/wallp1.jpg'
+import Arch from '../images/ArchFireLogo-removebg-preview.png'
 
 const widthD = Dimensions.get("screen").width;
 const heightD = Dimensions.get("screen").height;
@@ -104,19 +105,28 @@ const ThemeSwitch: React.FC<{}> = () => {
         ></Image>
       </Animated.View>
       <View
-        onTouchStart={() => handleThemeSwitch()}
         style={{
           position: "absolute",
           marginTop: 38,
           marginLeft: 12,
           width: 40,
           height: 40,
-          backgroundColor: "magenta",
+          backgroundColor: "transparent",
           borderRadius: 50,
+	  borderWidth: 0,
           zIndex: 3,
           elevation: 3,
         }}
-      ></View>
+      >
+      	<Image onTouchStart={() => handleThemeSwitch()}  source={Arch} style={{
+		position: 'relative',
+		width: 40, 
+		height: 40,
+		backgroundColor: 'transparent'
+	}}>
+		
+	</Image>
+      </View>
     </View>
   );
 };
