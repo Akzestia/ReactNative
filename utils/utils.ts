@@ -8,8 +8,10 @@ const downloadFile = async (url: string) => {
         const filename = `${uuid()}.jpg`;
         const { uri: localUri } = await FileSystem.downloadAsync(url, FileSystem.documentDirectory + filename);
         console.log('File downloaded successfully:', localUri);
+    	alert('succesfully downloaded!');
     }
     catch(Error){
+	    alert('failed to download.');
         console.log(Error);
     }
  
